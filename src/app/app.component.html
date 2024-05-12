@@ -1,0 +1,14 @@
+<button *ngIf="!isLoggedIn" (click)="login()">Login</button>
+
+<div  *ngIf="isLoggedIn" >
+    <h3>Welcome {{username}}</h3>
+    <button (click)="logout()">Logout</button>
+</div>
+
+<div *ngIf="clients">
+    <div *ngFor="let client of clients">
+        {{client.name}} <button class="" (click)="deleteClient(client.id)">Delete</button>
+    </div>
+</div>
+
+<button (click)="createClient()">Create Client</button>
